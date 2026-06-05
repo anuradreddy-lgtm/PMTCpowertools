@@ -118,9 +118,6 @@ export const auth = {
 
       const cleanEmail = (email || '').trim().toLowerCase()
       const allowedAdmins = [
-        'anuradreddy@gmail.com',
-        'bhukyanaveeen999@gmail.com',
-        'bhukyanaveen999@gmail.com',
         'pmtcpowertools@gmail.com'
       ]
       const isAllowedAdmin = allowedAdmins.includes(cleanEmail)
@@ -151,9 +148,6 @@ export const auth = {
       const cleanEmail = (email || '').trim().toLowerCase()
       const cleanPassword = (password || '').trim()
       const allowedAdmins = [
-        'anuradreddy@gmail.com',
-        'bhukyanaveeen999@gmail.com',
-        'bhukyanaveen999@gmail.com',
         'pmtcpowertools@gmail.com'
       ]
       const isAllowedAdmin = allowedAdmins.includes(cleanEmail)
@@ -163,7 +157,7 @@ export const auth = {
          window.location.hostname === '127.0.0.1' || 
          window.location.hostname === '')
 
-      const isCorrectPassword = isLocalhost || cleanPassword === 'naveen' || cleanPassword === 'naveen1'
+      const isCorrectPassword = isLocalhost || cleanPassword === 'Pmtc@2017'
 
       console.log('[auth.login] Admin login bypass check:', { cleanEmail, isAllowedAdmin, isCorrectPassword, isLocalhost })
 

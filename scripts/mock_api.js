@@ -53,7 +53,7 @@ function applyFilters(items, query) {
 // Seed default admin
 ;(async function seed() {
   const email = process.env.EMAIL || 'pmtcpowertools@gmail.com'
-  const password = process.env.PASSWORD || 'naveen'
+  const password = process.env.PASSWORD || 'Pmtc@2017'
   const hashed = await bcrypt.hash(password, 10)
   users.push({ id: String(idCounter++), email, password_hash: hashed, is_admin: true, full_name: 'Admin' })
 })()

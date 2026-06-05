@@ -6,7 +6,7 @@
 
 const API_URL = process.env.API_URL || 'https://api.base44.com'
 const EMAIL = process.env.EMAIL || 'pmtcpowertools@gmail.com'
-const PASSWORD = process.env.PASSWORD || 'naveen'
+const PASSWORD = process.env.PASSWORD || 'Pmtc@2017'
 const FULL_NAME = process.env.FULL_NAME || 'Admin'
 const PHONE = process.env.PHONE || ''
 
