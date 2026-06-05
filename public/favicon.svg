@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f" />
+      <stop offset="100%" stop-color="#172a45" />
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b00" />
+      <stop offset="100%" stop-color="#ff8e3c" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Container -->
+  <rect width="100" height="100" rx="22" fill="url(#bgGrad)" />
+  
+  <!-- Stylized Monogram P and Industrial gear teeth details -->
+  <g transform="translate(10, 10)">
+    <!-- Gear base / circular body for P -->
+    <path d="M40,15 A25,25 0 1,1 15,40 L15,15 Z" fill="none" stroke="url(#iconGrad)" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" />
+    <!-- Center hole of the gear / monogram -->
+    <circle cx="40" cy="40" r="10" fill="url(#iconGrad)" />
+    <!-- Monogram letters P vertical stem -->
+    <path d="M15,15 L15,65" stroke="url(#iconGrad)" stroke-width="10" stroke-linecap="round" />
+    <!-- Little mechanical/industrial dot or tooth -->
+    <circle cx="65" cy="40" r="4" fill="#ffffff" />
+  </g>
+</svg>

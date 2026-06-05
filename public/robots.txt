@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Exclude administrative paths
+Disallow: /admin
+Disallow: /admin-login
+Disallow: /admin/
+
+Sitemap: https://pmtc-trading.vercel.app/sitemap.xml
