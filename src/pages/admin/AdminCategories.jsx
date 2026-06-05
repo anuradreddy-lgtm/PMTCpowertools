@@ -64,9 +64,9 @@ export default function AdminCategories() {
   })
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
       <AdminSidebar/>
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-4 md:p-8">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-2xl font-heading font-bold text-gray-900">Categories</h1>
           <button onClick={()=>{setEditing(null);setForm(EMPTY);setShowModal(true)}} className="btn-primary flex items-center gap-2"><Plus size={18}/> Add Category</button>

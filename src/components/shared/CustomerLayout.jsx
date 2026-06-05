@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { Home, Grid, Search, ShoppingCart, Phone, MessageSquare } from 'lucide-react'
+import { Home, Grid, Search, ShoppingCart, Phone, MessageSquare, MapPin } from 'lucide-react'
 import { useCart } from '../../hooks/useCart'
 import { getSiteSettings } from '../../lib/siteSettings'
 import Navbar from './Navbar'
@@ -32,7 +32,7 @@ export default function CustomerLayout() {
   ]
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       <Navbar />
       {/* Page Content */}
       <main className="flex-1 pb-16 md:pb-0">
@@ -70,6 +70,17 @@ export default function CustomerLayout() {
 
       {/* Floating Action Buttons (WhatsApp & Call) */}
       <div className="fixed bottom-20 md:bottom-8 right-4 z-40 flex flex-col gap-3 transition-all duration-300">
+        {/* Google Maps Location Button */}
+        <a
+          href="https://maps.app.goo.gl/yiKAUNrANrCxacvT6?g_st=ac"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 md:w-14 md:h-14 bg-[#EA4335] hover:bg-[#d93025] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-108 active:scale-95 transition-all duration-300 group"
+          aria-label="View Location on Google Maps"
+        >
+          <MapPin size={22} className="md:size-24 group-hover:-translate-y-1 transition-transform duration-300" />
+        </a>
+
         {/* WhatsApp Button */}
         <a
           href={whatsappUrl}

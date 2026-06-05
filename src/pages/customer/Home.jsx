@@ -109,7 +109,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Floating Industrial Visual collage */}
-            <div className="lg:col-span-5 relative flex justify-center items-center h-[320px] sm:h-[400px]">
+            <div className="lg:col-span-5 relative flex justify-center items-center h-[360px] sm:h-[400px]">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -117,7 +117,7 @@ export default function Home() {
                 className="w-full h-full relative"
               >
                 {/* Main Glassmorphic Dashboard Card */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[320px] bg-glass p-6 rounded-3xl shadow-2xl animate-float">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[320px] bg-glass p-6 rounded-3xl shadow-2xl animate-float">
                   <div className="flex justify-between items-start mb-4">
                     <span className="text-[10px] text-accent font-bold uppercase tracking-widest bg-accent/25 border border-accent/30 px-2 py-0.5 rounded">PMTC Pro</span>
                     <Wrench className="text-accent animate-spin" size={16} style={{ animationDuration: '8s' }} />
@@ -147,22 +147,22 @@ export default function Home() {
                 </div>
 
                 {/* Floating Card 2: Brand Spec */}
-                <div className="absolute top-6 right-2 sm:right-6 w-[160px] bg-glass-card p-4 rounded-2xl shadow-xl animate-float-delayed flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
+                <div className="absolute top-6 right-2 sm:right-6 w-[130px] sm:w-[160px] bg-glass-card p-3 sm:p-4 rounded-2xl shadow-xl animate-float-delayed flex items-center gap-2 sm:gap-3">
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
                   <div>
-                    <p className="text-white text-[11px] font-bold">Bosch & Makita</p>
-                    <p className="text-navy-200 text-[9px]">Authorised Stock</p>
+                    <p className="text-white text-[10px] sm:text-[11px] font-bold">Bosch & Makita</p>
+                    <p className="text-navy-200 text-[8px] sm:text-[9px]">Authorised Stock</p>
                   </div>
                 </div>
 
                 {/* Floating Card 3: Support */}
-                <div className="absolute bottom-6 left-2 sm:left-6 w-[180px] bg-glass-card p-4 rounded-2xl shadow-xl animate-float flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-accent/25 flex items-center justify-center text-accent">
-                    <CheckCircle size={16} />
+                <div className="absolute bottom-6 left-2 sm:left-6 w-[140px] sm:w-[180px] bg-glass-card p-3 sm:p-4 rounded-2xl shadow-xl animate-float flex items-center gap-2 sm:gap-3">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-accent/25 flex items-center justify-center text-accent flex-shrink-0">
+                    <CheckCircle size={14} className="text-accent" />
                   </div>
                   <div>
-                    <p className="text-white text-[11px] font-bold">Fast Support</p>
-                    <p className="text-navy-200 text-[9px]">Enquiries answered same-day</p>
+                    <p className="text-white text-[10px] sm:text-[11px] font-bold">Fast Support</p>
+                    <p className="text-navy-200 text-[8px] sm:text-[9px]">Enquiries answered same-day</p>
                   </div>
                 </div>
               </motion.div>

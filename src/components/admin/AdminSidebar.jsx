@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Package, ShoppingCart, Tag, Tags, Bell, Settings, LogOut } from 'lucide-react'
+import { Package, ShoppingCart, Tag, Tags, Settings, LogOut, Menu, X } from 'lucide-react'
 import { useAuth } from '../../hooks/useAuth'
 import toast from 'react-hot-toast'
 import CompanyLogo from '../shared/CompanyLogo'
@@ -15,6 +16,7 @@ const links = [
 export default function AdminSidebar() {
   const { logout, user } = useAuth()
   const navigate = useNavigate()
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleLogout = async () => {
     await logout()
@@ -22,10 +24,13 @@ export default function AdminSidebar() {
     navigate('/admin-login')
   }
 
-  return (
-    <aside className="w-64 min-h-screen bg-primary flex flex-col">
-      <div className="px-6 py-5 border-b border-white/10">
+  const SidebarContent = () => (
+    <>
+      <div className="px-6 py-5 border-b border-white/10 flex items-center justify-between">
         <CompanyLogo className="h-16 w-auto rounded bg-white/95" />
+        <button onClick={() => setIsOpen(false)} className="md:hidden p-1 text-navy-200 hover:text-white transition-colors" aria-label="Close menu">
+          <X size={20} />
+        </button>
       </div>
 
       <div className="px-6 py-4 border-b border-white/10">
@@ -42,7 +47,7 @@ export default function AdminSidebar() {
 
       <nav className="flex-1 px-3 py-4 space-y-0.5">
         {links.map(({to,icon:Icon,label}) => (
-          <NavLink key={to} to={to}
+          <NavLink key={to} to={to} onClick={() => setIsOpen(false)}
             className={({isActive}) => `admin-sidebar-link ${isActive?'active':''}`}>
             <Icon size={18}/><span>{label}</span>
           </NavLink>
@@ -54,6 +59,42 @@ export default function AdminSidebar() {
           <LogOut size={18}/><span>Logout</span>
         </button>
       </div>
-    </aside>
+    </>
+  )
+
+  return (
+    <>
+      {/* Mobile Header Bar */}
+      <header className="md:hidden bg-primary h-16 px-4 flex items-center justify-between border-b border-white/10 text-white z-40 sticky top-0 w-full">
+        <CompanyLogo className="h-10 w-auto rounded bg-white/95" />
+        <button 
+          onClick={() => setIsOpen(true)}
+          className="p-2 text-navy-200 hover:text-white transition-colors"
+          aria-label="Open navigation menu"
+        >
+          <Menu size={24} />
+        </button>
+      </header>
+
+      {/* Mobile Drawer Overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 md:hidden transition-opacity duration-300"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Mobile Drawer Panel */}
+      <aside className={`fixed inset-y-0 left-0 w-64 bg-primary z-50 flex flex-col md:hidden transform transition-transform duration-300 ease-in-out ${
+        isOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
+        <SidebarContent />
+      </aside>
+
+      {/* Desktop Sidebar (standard) */}
+      <aside className="hidden md:flex w-64 min-h-screen bg-primary flex-col sticky top-0 h-screen">
+        <SidebarContent />
+      </aside>
+    </>
   )
 }

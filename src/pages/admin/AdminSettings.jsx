@@ -91,9 +91,9 @@ export default function AdminSettings() {
   ]
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
       <AdminSidebar />
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-4 md:p-8">
         <h1 className="text-2xl font-heading font-bold text-gray-900 mb-2">Settings</h1>
         <p className="text-gray-500 mb-8">Manage company information and admin credentials without changing the existing layout.</p>
 

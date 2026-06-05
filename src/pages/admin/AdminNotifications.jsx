@@ -19,9 +19,9 @@ export default function AdminNotifications() {
   const unread = notifications.filter(n=>!n.is_read).length
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
       <AdminSidebar/>
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-4 md:p-8">
         <div className="flex items-center gap-3 mb-8">
           <h1 className="text-2xl font-heading font-bold text-gray-900">Notifications</h1>
           {unread>0&&<span className="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded-full">{unread} new</span>}
