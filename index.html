@@ -7,6 +7,13 @@
     <meta name="description" content="PMTC - Padma Mitra Trading Company. Industrial tools, machinery & power tools." />
     <meta name="keywords" content="industrial tools, power tools, Bosch, Makita, Ingco, drill, grinder, PMTC" />
     <title>PMTC Trading Portal</title>
+    <script>
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

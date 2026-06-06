@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { Home, Grid, Search, ShoppingCart, Phone, MessageSquare, MapPin } from 'lucide-react'
+import { Home, Grid, Search, ShoppingCart, Phone, MapPin } from 'lucide-react'
 import { useCart } from '../../hooks/useCart'
 import { getSiteSettings } from '../../lib/siteSettings'
 import Navbar from './Navbar'
@@ -89,7 +89,12 @@ export default function CustomerLayout() {
           className="w-12 h-12 md:w-14 md:h-14 bg-[#25D366] hover:bg-[#1ebd59] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-108 active:scale-95 transition-all duration-300 group"
           aria-label="Enquire via WhatsApp"
         >
-          <MessageSquare size={22} className="md:size-24 group-hover:rotate-12 transition-transform duration-300" />
+          <svg 
+            viewBox="0 0 24 24" 
+            className="w-6 h-6 md:w-7 md:h-7 fill-current group-hover:rotate-12 transition-transform duration-300"
+          >
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-4.846c1.6.95 3.488 1.459 5.421 1.46h.005c5.454 0 9.895-4.442 9.9-9.9.003-2.646-1.02-5.132-2.883-6.995C17.22 1.86 14.734.834 12.09.833c-5.46 0-9.902 4.442-9.907 9.9-.001 1.932.504 3.82 1.463 5.418L2.68 21.03l4.967-1.303l-.001-.001-.002-.001zm11.558-7.393c-.3-.15-1.774-.875-2.049-.976-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.176-.175.2-.35.225-.65.075-1.04-.52-1.777-.92-2.525-1.6c-.53-.483-.872-1.03-1.022-1.282c-.15-.25-.016-.385.109-.51c.112-.112.25-.292.375-.438.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.45-.06-.15-.475-1.146-.65-1.567-.172-.413-.343-.357-.475-.364-.12-.007-.26-.008-.4-.008s-.37.05-.56.26c-.19.21-.72.7-.72 1.71c0 1.01.73 1.99.83 2.13c.1.14 1.44 2.2 3.49 3.08c.49.21.87.33 1.17.43c.49.15.94.13 1.29.08c.39-.06 1.774-.725 2.024-1.392c.25-.667.25-1.238.175-1.353c-.075-.115-.275-.19-.575-.34z" />
+          </svg>
         </a>
 
         {/* Click-to-Call Button */}

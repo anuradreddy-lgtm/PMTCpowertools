@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { ShoppingCart, Search, Menu, X } from 'lucide-react'
+import { ShoppingCart, Search, Menu, X, Sun, Moon } from 'lucide-react'
 import { useCart } from '../../hooks/useCart'
 import { motion, AnimatePresence } from 'framer-motion'
 import CompanyLogo from './CompanyLogo'
@@ -14,6 +14,28 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const { data: settings } = useQuery({ queryKey:['site-settings'], queryFn:getSiteSettings, retry:1, staleTime:60_000 })
+  
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 
+             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    }
+    return 'light'
+  })
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [theme])
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
+  }
   
   const searchInputRef = useRef(null)
 
@@ -83,6 +105,15 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 text-navy-200 hover:text-white hover:bg-white/5 rounded-full transition-all duration-200 flex items-center justify-center"
+              aria-label="Toggle dark/light mode"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
 
             {/* Cart */}
             <Link to="/cart" className="relative p-2.5 text-navy-200 hover:text-white hover:bg-white/5 rounded-full transition-all duration-200 group">

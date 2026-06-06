@@ -182,3 +182,128 @@
   50% { opacity: .85; transform: scale(0.96); }
 }
 
+/* Dark Mode Overrides */
+.dark body {
+  background-color: #0A1A3A !important;
+  color: #C9D5E8 !important;
+}
+
+.dark .bg-white {
+  background-color: #0E2450 !important;
+}
+
+.dark .card {
+  background-color: #0E2450 !important;
+  border-color: #1E4585 !important;
+}
+
+.dark .text-gray-900,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #ffffff !important;
+}
+
+.dark .text-gray-800 {
+  color: #E2E8F0 !important;
+}
+
+.dark .text-gray-700 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-gray-600 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-gray-500,
+.dark .text-gray-400 {
+  color: #9FB4D3 !important;
+}
+
+.dark .border-gray-100,
+.dark .border-gray-200,
+.dark .border-gray-50 {
+  border-color: #1E4585 !important;
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: #0A1A3A !important;
+}
+
+.dark .hover\:bg-gray-50:hover,
+.dark tr.hover\:bg-gray-50\/50:hover,
+.dark tr.hover\:bg-gray-50:hover {
+  background-color: #16346B !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #0A1A3A !important;
+  border-color: #1E4585 !important;
+  color: #ffffff !important;
+}
+
+.dark .input-field {
+  background-color: #0A1A3A !important;
+  border-color: #1E4585 !important;
+  color: #ffffff !important;
+}
+
+.dark .badge-success {
+  background-color: rgba(22, 163, 74, 0.2) !important;
+  color: #4ADE80 !important;
+}
+
+.dark .badge-warning {
+  background-color: rgba(217, 119, 6, 0.2) !important;
+  color: #FBBF24 !important;
+}
+
+.dark .badge-danger {
+  background-color: rgba(220, 38, 38, 0.2) !important;
+  color: #F87171 !important;
+}
+
+.dark .badge-info {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  color: #60A5FA !important;
+}
+
+.dark .bg-blueprint-cream {
+  background-color: #0A1A3A !important;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+}
+
+.dark .bg-glass-card-light {
+  background: rgba(14, 36, 80, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .text-navy-900 {
+  color: #ffffff !important;
+}
+
+.dark .text-navy-800 {
+  color: #E2E8F0 !important;
+}
+
+.dark .text-navy-700 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-navy-600 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-navy-500 {
+  color: #9FB4D3 !important;
+}
+
