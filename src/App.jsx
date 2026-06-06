@@ -17,6 +17,7 @@ const Contact       = lazy(() => import('./pages/customer/Contact'))
 
 // Admin pages
 const AdminLogin         = lazy(() => import('./pages/admin/AdminLogin'))
+const AdminDashboard     = lazy(() => import('./pages/admin/AdminDashboard'))
 const AdminProducts      = lazy(() => import('./pages/admin/AdminProducts'))
 const AdminOrders        = lazy(() => import('./pages/admin/AdminOrders'))
 const AdminCategories    = lazy(() => import('./pages/admin/AdminCategories'))
@@ -54,7 +55,8 @@ function AppRoutes() {
       </Route>
       {/* Admin */}
       <Route path="/admin-login"             element={<AdminLogin />} />
-      <Route path="/admin"                   element={<Navigate to="/admin/orders" replace />} />
+      <Route path="/admin"                   element={<Navigate to="/admin/dashboard" replace />} />
+      <Route path="/admin/dashboard"         element={<AdminRoute><AdminDashboard /></AdminRoute>} />
       <Route path="/admin/products"          element={<AdminRoute><AdminProducts /></AdminRoute>} />
       <Route path="/admin/orders"            element={<AdminRoute><AdminOrders /></AdminRoute>} />
       <Route path="/admin/categories"        element={<AdminRoute><AdminCategories /></AdminRoute>} />

@@ -22,7 +22,7 @@ export default function AdminLogin() {
         return
       }
       toast.success('Welcome back!')
-      navigate('/admin/orders')
+      navigate('/admin/dashboard')
     } catch(err) {
       toast.error(err.message || 'Invalid credentials')
     } finally { setLoading(false) }

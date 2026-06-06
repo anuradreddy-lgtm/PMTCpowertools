@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Package, ShoppingCart, Tag, Tags, Settings, LogOut, Menu, X } from 'lucide-react'
+import { LayoutDashboard, Package, ShoppingCart, Tag, Tags, Settings, LogOut, Menu, X } from 'lucide-react'
 import { useAuth } from '../../hooks/useAuth'
 import toast from 'react-hot-toast'
 import CompanyLogo from '../shared/CompanyLogo'
 
 const links = [
+  { to:'/admin/dashboard',     icon:LayoutDashboard, label:'Dashboard' },
   { to:'/admin/products',      icon:Package,         label:'Products' },
   { to:'/admin/orders',        icon:ShoppingCart,    label:'Customer Enquiries' },
   { to:'/admin/categories',    icon:Tag,             label:'Categories' },
