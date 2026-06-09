@@ -30,11 +30,7 @@ PMTCpowertools is a modern web application designed to optimize shop management 
    git clone [https://github.com/anuradreddy-lgtm/PMTCpowertools.git](https://github.com/anuradreddy-lgtm/PMTCpowertools.git)
    ***
 
-### Why this works:
-1.  **The "Hook":** It immediately identifies that this is a business-utility tool ("increase sales efficiency").
-2.  **Tech Visibility:** The badges make it visually clear that you are using modern tools (Tailwind, Supabase, Vite), which is what companies are looking for in 2026.
-3.  **Setup Clarity:** Providing a `Getting Started` section shows potential collaborators or hiring managers that you care about developer experience and project maintainability.
-4.  **Live Demo Link:** Including the Vercel link directly is essential—it allows recruiters to click and instantly see your work in action without having to download code.
+
 
 🌐 Live Demo
 Access the live application here: https://www.padmamitratradingcompany.in/
