@@ -137,12 +137,12 @@ export default function AdminBrands() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-gray-50 border-b border-gray-100">
-                <tr>{['Logo','Brand Name','Slug','Description','Actions'].map(heading=>(
+                <tr>{['Logo','Brand Name','Description','Actions'].map(heading=>(
                   <th key={heading} className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{heading}</th>
                 ))}</tr>
               </thead>
               <tbody className="divide-y divide-gray-50">
-                {isLoading && <tr><td colSpan={5} className="px-5 py-12 text-center text-gray-400">Loading...</td></tr>}
+                {isLoading && <tr><td colSpan={4} className="px-5 py-12 text-center text-gray-400">Loading...</td></tr>}
                 {filtered.map(brand=>(
                   <tr key={brand.id} className="hover:bg-gray-50">
                     <td className="px-5 py-4">
@@ -151,7 +151,6 @@ export default function AdminBrands() {
                         : <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center"><Tags size={18} className="text-gray-400"/></div>}
                     </td>
                     <td className="px-5 py-4 font-medium text-gray-800">{brand.name}</td>
-                    <td className="px-5 py-4 text-gray-600">{brand.slug}</td>
                     <td className="px-5 py-4 text-gray-600 max-w-md"><p className="line-clamp-2">{brand.description || '-'}</p></td>
                     <td className="px-5 py-4">
                       <div className="flex gap-2">
@@ -161,7 +160,7 @@ export default function AdminBrands() {
                     </td>
                   </tr>
                 ))}
-                {!isLoading && filtered.length===0 && <tr><td colSpan={5} className="px-5 py-12 text-center text-gray-400">No brands found</td></tr>}
+                {!isLoading && filtered.length===0 && <tr><td colSpan={4} className="px-5 py-12 text-center text-gray-400">No brands found</td></tr>}
               </tbody>
             </table>
           </div>
@@ -178,10 +177,6 @@ export default function AdminBrands() {
                 <div>
                   <label className="block text-xs font-medium text-gray-600 mb-1">Brand Name *</label>
                   <input value={form.name} onChange={event=>setForm(current=>({...current,name:event.target.value}))} className="input-field" required placeholder="e.g. Bosch"/>
-                </div>
-                <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">Slug</label>
-                  <input value={form.slug} onChange={event=>setForm(current=>({...current,slug:event.target.value}))} className="input-field" placeholder="auto-generated"/>
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-gray-600 mb-1">Description</label>

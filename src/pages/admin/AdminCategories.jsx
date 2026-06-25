@@ -108,10 +108,6 @@ export default function AdminCategories() {
                   <input value={form.name} onChange={e=>setForm(f=>({...f,name:e.target.value}))} className="input-field" placeholder="Category name" required/>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">Slug</label>
-                  <input value={form.slug} onChange={e=>setForm(f=>({...f,slug:e.target.value}))} className="input-field" placeholder="auto-generated"/>
-                </div>
-                <div>
                   <label className="block text-xs font-medium text-gray-600 mb-1">Description</label>
                   <textarea value={form.description} onChange={e=>setForm(f=>({...f,description:e.target.value}))} className="input-field" rows={3} placeholder="Brief description"/>
                 </div>

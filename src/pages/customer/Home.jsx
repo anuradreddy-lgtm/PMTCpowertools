@@ -11,7 +11,7 @@ import ProductCard from '../../components/shared/ProductCard'
 
 const features = [
   { icon: Award,            title: 'Since 2017',                  desc: 'Serving industries, contractors and workshops for over 9 years.' },
-  { icon: Shield,           title: 'Genuine Industrial Brands',   desc: 'Authorised dealer for Bosch, Makita, Ingco, Dongcheng and more.' },
+  { icon: Shield,           title: 'Genuine Industrial Brands',   desc: 'Authorised dealer for Bosch, steel cheng, hikoki, Dongcheng and more.' },
   { icon: HeadphonesIcon,   title: 'Expert Support',              desc: 'Mon-Sun, 9AM-8PM' },
   { icon: Truck,            title: 'Trusted Industrial Supplier',  desc: 'Reliable machinery, tools and hardware supplies across Andhra Pradesh and Telangana.' },
 ]
@@ -20,7 +20,7 @@ const counters = [
   { value: '9+', label: 'Years Experience', desc: 'Serving since 2017', icon: Award },
   { value: '1,000+', label: 'Products Available', desc: 'Premium tools & machinery', icon: Package },
   { value: '500+', label: 'Happy Customers', desc: 'Contractors & workshops', icon: Users },
-  { value: '50+', label: 'Industrial Brands', desc: 'Bosch, Makita, Ingco...', icon: Shield }
+  { value: '50+', label: 'Industrial Brands', desc: 'Bosch, steel cheng, hikoki...', icon: Shield }
 ]
 
 const testimonials = [
@@ -150,7 +150,7 @@ export default function Home() {
                 <div className="absolute top-6 right-2 sm:right-6 w-[130px] sm:w-[160px] bg-glass-card p-3 sm:p-4 rounded-2xl shadow-xl animate-float-delayed flex items-center gap-2 sm:gap-3">
                   <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
                   <div>
-                    <p className="text-white text-[10px] sm:text-[11px] font-bold">Bosch & Makita</p>
+                    <p className="text-white text-[10px] sm:text-[11px] font-bold">Bosch & steel cheng</p>
                     <p className="text-navy-200 text-[8px] sm:text-[9px]">Authorised Stock</p>
                   </div>
                 </div>
@@ -189,7 +189,7 @@ export default function Home() {
                 </Link>
               ))
             ) : (
-              ['Bosch', 'Makita', 'Ingco', 'Dongcheng', 'Stanley', 'Total'].map((b) => (
+              ['Bosch', 'Steel Cheng', 'Hikoki', 'Dongcheng', 'Toshon', 'Total'].map((b) => (
                 <div
                   key={b}
                   className="group flex items-center justify-center bg-gray-50/60 hover:bg-white border border-gray-100 hover:border-accent/30 px-6 py-4 rounded-2xl shadow-sm transition-all duration-300 transform hover:-translate-y-1"
@@ -320,7 +320,7 @@ export default function Home() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { icon: Shield, title: 'Genuine Brands Only', desc: 'Authorized suppliers for Bosch, Makita, and other industry leaders.' },
+                  { icon: Shield, title: 'Genuine Brands Only', desc: 'Authorized suppliers for Bosch, steel cheng, and other industry leaders.' },
                   { icon: Award, title: 'Fair, GST-Compliant Pricing', desc: 'Transparent wholesale rates with clear business invoices.' },
                   { icon: Truck, title: 'Reliable Supply Chains', desc: 'Swift supply delivery covering Andhra Pradesh & Telangana regions.' },
                   { icon: HeadphonesIcon, title: 'Expert Domain Support', desc: 'Technical guidance to match the right machinery to your workshop.' }

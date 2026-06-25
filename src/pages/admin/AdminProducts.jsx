@@ -198,16 +198,7 @@ export default function AdminProducts() {
                     <label className="block text-xs font-medium text-gray-600 mb-1">Product Name *</label>
                     <input value={form.name} onChange={e=>setForm(f=>({...f,name:e.target.value}))} className="input-field" required placeholder="e.g. Bosch GBM 350 Drill"/>
                   </div>
-                  <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1">SKU</label>
-                    <input value={form.sku} onChange={e=>setForm(f=>({...f,sku:e.target.value}))} className="input-field" placeholder="BSH-GBM-350"/>
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1">Slug</label>
-                    <input value={form.slug} onChange={e=>setForm(f=>({...f,slug:e.target.value}))} className="input-field" placeholder="auto-generated"/>
-                  </div>
-              
-                  <div>
+                  <div className="col-span-2">
                     <label className="block text-xs font-medium text-gray-600 mb-1">Stock *</label>
                     <input type="number" value={form.stock} onChange={e=>setForm(f=>({...f,stock:e.target.value}))} className="input-field" required min="0"/>
                   </div>
