@@ -15,41 +15,33 @@ export default function Contact() {
     setIsLoading(true)
     
     try {
-      let success = false
+      // 1. Always save the enquiry to the orders table in Supabase
+      const payload = {
+        order_number: `ENQ-${Date.now()}-${Math.floor(Math.random() * 900) + 100}`,
+        customer_name: form.name.trim(),
+        email: form.email.trim(),
+        customer_phone: form.phone.trim(),
+        product_name: `Contact Message: ${form.message.trim().slice(0, 100)}${form.message.length > 100 ? '...' : ''}`,
+        product_id: 'contact_form',
+        quantity: 1,
+        status: 'new',
+        created_at: new Date().toISOString(),
+      }
+
+      const { error: dbError } = await supabase.from('orders').insert([payload])
+      if (dbError) {
+        throw new Error(dbError.message || 'Unable to save message. Please try again.')
+      }
+
+      // 2. Also attempt to send email notifications via the api
       try {
-        const response = await fetch('/api/contact', {
+        await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form)
         })
-        
-        if (response.ok) {
-          success = true
-        } else {
-          console.warn('[Contact] Fetch to /api/contact failed, attempting database fallback...')
-        }
       } catch (fetchErr) {
-        console.warn('[Contact] Network error to /api/contact, attempting database fallback:', fetchErr)
-      }
-
-      if (!success) {
-        // Fallback: Save enquiry directly to the orders table in Supabase
-        const payload = {
-          order_number: `ENQ-${Date.now()}-${Math.floor(Math.random() * 900) + 100}`,
-          customer_name: form.name.trim(),
-          email: form.email.trim(),
-          customer_phone: form.phone.trim(),
-          product_name: `Contact Message: ${form.message.trim().slice(0, 100)}${form.message.length > 100 ? '...' : ''}`,
-          product_id: 'contact_form',
-          quantity: 1,
-          status: 'new',
-          created_at: new Date().toISOString(),
-        }
-
-        const { error: dbError } = await supabase.from('orders').insert([payload])
-        if (dbError) {
-          throw new Error(dbError.message || 'Unable to save message. Please try again.')
-        }
+        console.warn('[Contact] Network error to /api/contact email notification:', fetchErr)
       }
       
       toast.success("Message sent! We'll reply within 24 hours.")

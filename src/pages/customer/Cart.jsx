@@ -38,8 +38,8 @@ export default function Cart() {
 
     window.open(`https://wa.me/919397914866?text=${encodeURIComponent(message)}`, '_blank')
 
-    const { data, error } = await supabase.from('orders').insert([orderPayload]).select('*')
-    if (error || !data) {
+    const { error } = await supabase.from('orders').insert([orderPayload])
+    if (error) {
       console.error('Supabase order save failed:', JSON.stringify(error, null, 2), orderPayload)
       toast.error('Could not save the enquiry order. Please try again.')
       return
@@ -47,7 +47,7 @@ export default function Cart() {
 
     // Ensure cart state and storage are cleared after successful insert
     try {
-      console.debug('Supabase insert success:', data)
+      console.debug('Supabase insert success')
       clearCart()
       // remove localStorage entry explicitly to ensure no stale data
       try { localStorage.removeItem('pmtc_cart') } catch (e) { console.warn('Failed to remove pmtc_cart from localStorage', e) }
